@@ -66,3 +66,13 @@ services:
     entrypoint: ["php", "artisan"]
     networks:
       - laravel
+
+  npm:
+    image: node:current-alpine
+    container_name: npm
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
+    entrypoint: ["npm"]
+    networks:
+      - laravel
