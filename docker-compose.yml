@@ -13,6 +13,7 @@ services:
     depends_on:
       - php
       - mysql
+      - redis
     ports:
       - 80:80
       - 443:443
@@ -88,3 +89,11 @@ services:
       - ./src:/var/www/html
     working_dir: /var/www/html
     entrypoint: ["/var/www/html/vendor/bin/phpunit"]
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    ports:
+      - 6379:6379
+    networks:
+      - laravel
