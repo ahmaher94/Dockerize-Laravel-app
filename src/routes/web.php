@@ -10,6 +10,7 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index']);
+Route::get('/posts/get', [PostController::class, 'getFood']);
 Route::get('/posts/{post}', [PostController::class, 'show']);
 Route::get('/posts/{post}/comments', [CommentController::class, 'index']);
 Route::get('/posts/{post}/comments/{comment}', [CommentController::class, 'show']);
